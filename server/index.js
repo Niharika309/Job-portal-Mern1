@@ -23,7 +23,9 @@ app.use('/uploads', express.static('uploads'));
 
 
 const corsOptions= {
-    origin:['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'http://localhost:5176', 'http://localhost:5177'],
+    origin: process.env.NODE_ENV === 'production' 
+        ? ['https://your-frontend-url.vercel.app'] // Will be updated after frontend deployment
+        : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'http://localhost:5176', 'http://localhost:5177'],
     credentials:true
 }
 app.use(cors(corsOptions));
