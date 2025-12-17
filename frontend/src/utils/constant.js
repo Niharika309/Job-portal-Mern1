@@ -14,7 +14,7 @@ const getApiBaseUrl = () => {
   }
   
   // Development fallback
-  return "http://localhost:8000";
+  return "https://job-portal-mern1.onrender.com";
 };
 
 const API_BASE_URL = getApiBaseUrl();
